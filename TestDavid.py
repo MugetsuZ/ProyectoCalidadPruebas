@@ -7,12 +7,12 @@ from baseladvd import basedb
 class Test(unittest.TestCase):
 
     def setUp(self):
-
+        
         self.tw = AppTwitter()
-        self.usuariomock = Mock(user_id = "832311984", handle = "DavidDarkXD", lugar = "Saltillo Coahuila",\
-        verificado = "Usuario no verificado.",  followers = 9, numtweets = 13, friends = 24,\
-        description = "DarkLord,Gamer, Metalhead", lenguaje = "es",\
-         profile = "http://pbs.twimg.com/profile_images/2891678926/0c26f6daab3103b413542c748dc40c3e_normal.jpeg",\
+        self.usuariomock = Mock(user_id = "2903096308", handle = "MugetsuZero", lugar = "Saltillo Coahuila",\
+        verificado = "Usuario no verificado.",  followers = 3, numtweets = 14, friends = 75,\
+        description = "No tiene.", lenguaje = "es",\
+         profile = "http://pbs.twimg.com/profile_images/539929455871811584/rm23envR_normal.jpeg",\
          Ranking = None,Categoria = None,Victorias = 0,Derrotas = 0)
         self.usuario = Tweeti(self.usuariomock.user_id,self.usuariomock.handle,self.usuariomock.lugar,\
         self.usuariomock.verificado,self.usuariomock.followers,self.usuariomock.numtweets,\
@@ -57,7 +57,7 @@ class Test(unittest.TestCase):
 
     def testinsert(self):
         print("testinsert")
-        self.assertTrue(self.sql.insert_db(self.tw.getUsuario("DavidDarkXD")))
+        self.assertTrue(self.sql.insert_db(self.tw.getUsuario("MugetsuZero")))
 
     def testupdate(self):
         print("test_update")
@@ -70,20 +70,20 @@ class Test(unittest.TestCase):
 
     def test_getUsuario(self):
         print("test_getUsuario")
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").user_id, self.usuario.user_id)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").handle, self.usuario.handle)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").lugar, self.usuario.lugar)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").verificado, self.usuario.verificado)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").followers, self.usuario.followers)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").numtweets, self.usuario.numtweets)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").friends, self.usuario.friends)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").description, self.usuario.description)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").lenguaje, self.usuario.lenguaje)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").profile, self.usuario.profile)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").Ranking, self.usuario.Ranking)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").Categoria, self.usuario.Categoria)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").Victorias, self.usuario.Victorias)
-        self.assertEqual(self.tw.getUsuario("DavidDarkXD").Derrotas, self.usuario.Derrotas)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").user_id, self.usuario.user_id)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").handle, self.usuario.handle)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").lugar, self.usuario.lugar)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").verificado, self.usuario.verificado)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").followers, self.usuario.followers)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").numtweets, self.usuario.numtweets)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").friends, self.usuario.friends)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").description, self.usuario.description)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").lenguaje, self.usuario.lenguaje)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").profile, self.usuario.profile)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").Ranking, self.usuario.Ranking)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").Categoria, self.usuario.Categoria)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").Victorias, self.usuario.Victorias)
+        self.assertEqual(self.tw.getUsuario("MugetsuZero").Derrotas, self.usuario.Derrotas)
 
 if __name__ == '__main__':
     unittest.main()
